@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelPlanner00017431", "TravelPlanner00017431\TravelPlanner00017431.csproj", "{81B890E0-C587-4ECE-A2B6-855D43FA119D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelPlanner00017431.DAL", "TravelPlanner00017431.DAL\TravelPlanner00017431.DAL.csproj", "{8F2D0F7E-8075-428C-B87B-7E5C4D111099}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81B890E0-C587-4ECE-A2B6-855D43FA119D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81B890E0-C587-4ECE-A2B6-855D43FA119D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81B890E0-C587-4ECE-A2B6-855D43FA119D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81B890E0-C587-4ECE-A2B6-855D43FA119D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F2D0F7E-8075-428C-B87B-7E5C4D111099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F2D0F7E-8075-428C-B87B-7E5C4D111099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F2D0F7E-8075-428C-B87B-7E5C4D111099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F2D0F7E-8075-428C-B87B-7E5C4D111099}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {17A25865-69A5-4578-B3F7-72A299F59B83}
+	EndGlobalSection
+EndGlobal
