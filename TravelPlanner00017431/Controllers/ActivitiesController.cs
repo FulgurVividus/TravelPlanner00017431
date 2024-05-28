@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using TravelPlanner00017431.DAL.Data;
 using TravelPlanner00017431.DAL.Data.Repositories;
 using TravelPlanner00017431.DAL.Models;
 
@@ -9,24 +7,24 @@ namespace TravelPlanner00017431.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TripsController : ControllerBase
+    public class ActivitiesController : ControllerBase
     {
-        private readonly IRepository<Trip> _repository;
-        public TripsController(IRepository<Trip> repository)
+        private readonly IRepository<Activity> _activityRepository;
+        public ActivitiesController(IRepository<Activity> activityRepository)
         {
-            _repository = repository;
+            _activityRepository = activityRepository;
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Trip>> Get()
+        public async Task<IEnumerable<Activity>> Get()
         {
-            return await _repository.GetAll();
+            return await _activityRepository.GetAll();
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var trip = await _repository.GetById(id);
+            var trip = await _activityRepository.GetById(id);
             if (trip == null)
             {
                 return NotFound();
@@ -38,23 +36,23 @@ namespace TravelPlanner00017431.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Trip trip)
+        public async Task<IActionResult> Create(Activity activity)
         {
-            await _repository.Add(trip);
-            return CreatedAtAction(nameof(GetById), new { id = trip.Id }, trip);
+            await _activityRepository.Add(activity);
+            return CreatedAtAction(nameof(GetById), new { id = activity.Id }, activity);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(Trip trip)
+        public async Task<IActionResult> Update(Activity activity)
         {
-            await _repository.Update(trip);
+            await _activityRepository.Update(activity);
             return NoContent();
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            await _repository.Delete(id);
+            await _activityRepository.Delete(id);
             return NoContent();
         }
     }

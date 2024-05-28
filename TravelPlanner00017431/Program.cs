@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using TravelPlanner00017431.DAL.Data;
+using TravelPlanner00017431.DAL.Data.Repositories;
+using TravelPlanner00017431.DAL.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +14,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<AppDbContext>(options => 
     options.UseSqlServer(builder.Configuration.GetConnectionString("TravelPlanner00017431")));
+
+builder.Services.AddScoped<IRepository<Trip>, TripsRepository>();
+builder.Services.AddScoped<IRepository<Activity>, ActivitiesRepository>();
 
 
 var app = builder.Build();
