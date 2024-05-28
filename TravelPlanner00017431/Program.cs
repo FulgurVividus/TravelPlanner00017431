@@ -18,6 +18,13 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<IRepository<Trip>, TripsRepository>();
 builder.Services.AddScoped<IRepository<Activity>, ActivitiesRepository>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowedOrigins",
+        builder => builder.WithOrigins("http://localhost:4200")
+        .AllowAnyMethod()
+        .AllowAnyHeader());
+});
 
 var app = builder.Build();
 
@@ -29,6 +36,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthorization();
+app.UseCors("AllowedOrigins");
 
 app.MapControllers();
 
