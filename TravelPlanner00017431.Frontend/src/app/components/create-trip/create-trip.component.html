@@ -1,5 +1,5 @@
-<div class="p-8 mt-8 flex justify-center">
-    <form class="shadow border w-4/12 p-4">
+<div class="h-full p-8 flex justify-center items-center bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300">
+    <form class="shadow border w-4/12 px-4 py-8 bg-white">
         <div class="flex">
             <mat-form-field class="w-full">
                 <mat-label>Trip's Name</mat-label>
@@ -9,7 +9,7 @@
         <div class="flex">
             <mat-form-field class="w-full">
                 <mat-label>Destination</mat-label>
-                <input matInput name="description" type="text" [(ngModel)]="createTrip.destination">
+                <input matInput name="destination" type="text" [(ngModel)]="createTrip.destination">
             </mat-form-field>
         </div>
         <div>
@@ -21,7 +21,7 @@
             </mat-form-field>
             <mat-form-field class="ml-2">
                 <mat-label>Indicate End Date</mat-label>
-                <input matInput [matDatepicker]="endDatePicker" name="startDate" [(ngModel)]="createTrip.startDate">
+                <input matInput [matDatepicker]="endDatePicker" name="endDate" [(ngModel)]="createTrip.endDate">
                 <mat-datepicker-toggle matIconSuffix [for]="endDatePicker"></mat-datepicker-toggle>
                 <mat-datepicker #endDatePicker></mat-datepicker>
             </mat-form-field>

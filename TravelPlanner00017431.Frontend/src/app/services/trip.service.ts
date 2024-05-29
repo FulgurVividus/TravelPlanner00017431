@@ -26,6 +26,7 @@ export class TripService {
   }
 
   delete(id:number){
+    console.log("I'm deleting!") // for debug
     return this.httpClient.delete("http://localhost:5218/api/Trips/"+id)
   }
 }

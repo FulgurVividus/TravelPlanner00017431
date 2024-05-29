@@ -1,1 +1,25 @@
-<p>activity-details works!</p>
+<div class="h-screen bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 flex flex-col justify-center">
+  <div class="container mx-auto py-20">
+    <mat-card class="w-2/4 mx-auto p-8 bg-white rounded-lg">
+      <h2 class="text-2xl font-bold mb-8 text-center">{{ activityDetails.title }}</h2>
+      <div>
+        <p class="text-lg mb-4">
+          <span class="font-semibold">Location:</span> {{ activityDetails.location }}
+        </p>
+        <p class="text-lg mb-4">
+          <span class="font-semibold">Date:</span> {{ activityDetails.date }}
+        </p>
+        <p class="text-lg mb-4">
+          <span class="font-semibold">Estimated Cost:</span> {{ activityDetails.estimatedCost }}
+        </p>
+      </div>
+      <div class="mt-8" *ngIf="trip">
+        <p class="text-lg font-semibold mb-4">Associated Trip:</p>
+        <p class="text-lg">
+          <a [routerLink]="['/tripDetails', trip.id]" class="text-blue-400 hover:text-blue-300 underline">{{ trip.name
+            }}</a>
+        </p>
+      </div>
+    </mat-card>
+  </div>
+</div>

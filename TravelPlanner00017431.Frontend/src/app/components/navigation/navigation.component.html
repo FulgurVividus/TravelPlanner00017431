@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" class="flex justify-between p-2">
+<mat-toolbar class="flex justify-between p-2">
   <div>
     <button mat-icon-button class="example-icon" aria-label="Home" (click)="OnHomeClick()">
       <mat-icon>home</mat-icon>
@@ -6,6 +6,7 @@
     <span >Travel Planner 17431</span>
   </div>  
   <div>
-    <button mat-raised-button (click)="OnCreateClick()">Create</button>
+      <button mat-raised-button (click)="OnCreateTripClick()">Create Trip</button>
+      <button class="ml-3" mat-raised-button (click)="OnCreateActivityClick()">Create Activity</button>
   </div>
 </mat-toolbar>

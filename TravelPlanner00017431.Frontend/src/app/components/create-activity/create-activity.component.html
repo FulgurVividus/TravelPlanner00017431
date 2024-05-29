@@ -1,1 +1,45 @@
-<p>create-activity works!</p>
+<div class="h-full p-8 flex justify-center items-center bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300">
+    <form class="shadow border w-4/12 px-4 py-8 bg-white">
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>Activity Title</mat-label>
+                <input matInput name="title" type="text" [(ngModel)]="createActivity.title">
+            </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>Location</mat-label>
+                <input matInput name="location" type="text" [(ngModel)]="createActivity.location">
+            </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>Estimated Cost</mat-label>
+                <input matInput name="estimatedCost" type="number" min="0" [(ngModel)]="createActivity.estimatedCost">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="w-full">
+                <mat-label>Indicate Date</mat-label>
+                <input matInput [matDatepicker]="picker" name="date" [(ngModel)]="createActivity.date">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="flex">
+            <mat-form-field class="w-full">
+                <mat-label>Select a Trip</mat-label>
+                <mat-select [(ngModel)]="tripId" name="Trip">
+                    @for(t of trips; track t)
+                    {
+                        <mat-option [value]="t.id">{{t.name}}</mat-option>
+                    }
+                </mat-select>
+
+            </mat-form-field>
+        </div>
+        <div class="flex justify-center">
+            <button mat-raised-button color="primary" (click)="create()">Create</button>
+        </div>
+    </form>
+</div>

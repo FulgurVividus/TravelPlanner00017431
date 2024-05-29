@@ -44,7 +44,7 @@ namespace TravelPlanner00017431.Controllers
             return CreatedAtAction(nameof(GetById), new { id = trip.Id }, trip);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut]
         public async Task<IActionResult> Update(Trip trip)
         {
             await _repository.Update(trip);
@@ -55,7 +55,7 @@ namespace TravelPlanner00017431.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             await _repository.Delete(id);
-            return NoContent();
+            return Ok(id);
         }
     }
 }

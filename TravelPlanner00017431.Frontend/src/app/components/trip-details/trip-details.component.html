@@ -1,1 +1,29 @@
-<p>trip-details works!</p>
+<div class="h-screen bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 flex flex-col justify-center">
+    <div class="container mx-auto py-20">
+      <mat-card class="w-2/4 mx-auto p-8 bg-white rounded-lg">
+        <h2 class="text-2xl font-bold mb-8 text-center">{{ tripDetails.name }}</h2>
+        <div>
+          <p class="text-lg mb-4">
+            <span class="font-semibold">Location:</span> {{ tripDetails.destination }}
+          </p>
+          <p class="text-lg mb-4">
+            <span class="font-semibold">Start Date:</span> {{ tripDetails.startDate }}
+          </p>
+          <p class="text-lg mb-4">
+            <span class="font-semibold">End Date:</span> {{ tripDetails.endDate }}
+          </p>
+        </div>
+        <div class="mt-8" *ngIf="activities && activities.length > 0">
+          <p class="text-lg font-semibold mb-4">Activities:</p>
+          <ul class="list-disc ml-4">
+            <li *ngFor="let a of activities">
+              <a [routerLink]="['/activityDetails', a.id]" class="text-blue-600 hover:underline">{{ a.title }}</a>
+            </li>
+          </ul>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+  
+  
+  

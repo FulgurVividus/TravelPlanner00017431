@@ -3,6 +3,7 @@ using TravelPlanner00017431.DAL.Data;
 using TravelPlanner00017431.DAL.Data.Repositories;
 using TravelPlanner00017431.DAL.Models;
 
+var allowedOrigins = "_allowedOrigins";
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -20,10 +21,10 @@ builder.Services.AddScoped<IRepository<Activity>, ActivitiesRepository>();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowedOrigins",
-        builder => builder.WithOrigins("http://localhost:4200")
-        .AllowAnyMethod()
-        .AllowAnyHeader());
+    options.AddPolicy(allowedOrigins, policy =>
+    {
+        policy.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod();
+    });
 });
 
 var app = builder.Build();
@@ -36,7 +37,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthorization();
-app.UseCors("AllowedOrigins");
+app.UseCors(allowedOrigins);
 
 app.MapControllers();
 

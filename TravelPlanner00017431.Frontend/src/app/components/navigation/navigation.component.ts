@@ -13,8 +13,11 @@ import { Router } from '@angular/router';
 })
 export class NavigationComponent {
   router =inject(Router)
-  OnCreateClick(){
+  OnCreateTripClick(){
     this.router.navigateByUrl("createTrip")
+  }
+  OnCreateActivityClick(){
+    this.router.navigateByUrl("createActivity")
   }
   OnHomeClick(){
     this.router.navigateByUrl("")

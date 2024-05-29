@@ -5,7 +5,7 @@ using TravelPlanner00017431.DAL.Models;
 
 namespace TravelPlanner00017431.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class ActivitiesController : ControllerBase
     {
@@ -24,14 +24,29 @@ namespace TravelPlanner00017431.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var trip = await _activityRepository.GetById(id);
-            if (trip == null)
+            var activity = await _activityRepository.GetById(id);
+            if (activity == null)
             {
                 return NotFound();
             }
             else
             {
-                return Ok(trip);
+                return Ok(activity);
+            }
+        }
+
+        [HttpGet("{tripId}")]
+        public async Task<IActionResult> FilterByTrip(int tripId)
+        {
+            var activities = await _activityRepository.GetAll();
+            var activity = activities.Where(a => a.TripId == tripId);
+            if (activity == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(activity);
             }
         }
 
