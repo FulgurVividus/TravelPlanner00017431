@@ -18,11 +18,11 @@ Make sure you have the following development tools installed on your machine:
 
 ## Dependencies and Packages
 ### Nuget packages list
-Microsoft.EntityFrameworkCore Version 6.0.30 
-Microsoft.EntityFrameworkCore.SqlServer Version 6.0.30
-Microsoft.EntityFrameworkCore.Tools Version 6.0.30
+- Microsoft.EntityFrameworkCore Version 6.0.30 
+- Microsoft.EntityFrameworkCore.SqlServer Version 6.0.30
+- Microsoft.EntityFrameworkCore.Tools Version 6.0.30
 
 ### Npm dependencies
-Tailwind CSS
-Angular Material
-Moment.js 2.30.1
+- Tailwind CSS
+- Angular Material
+- Moment.js 2.30.1
